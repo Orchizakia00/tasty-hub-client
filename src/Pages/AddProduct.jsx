@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 
 const AddProduct = () => {
 
@@ -13,7 +14,24 @@ const AddProduct = () => {
         const rating = form.rating.value;
         const productImg = form.product_image.value;
         const brandImg = form.brand_image.value;
-        console.log(productName, brandName, shortDescription, price, category, rating, productImg, brandImg);
+
+        const newProduct = { productName, brandName, shortDescription, price, category, rating, productImg, brandImg }
+        console.log(newProduct);
+
+        fetch('http://localhost:5000/product', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success('Product added successfully!')
+                }
+            })
     }
 
     return (
@@ -103,7 +121,10 @@ const AddProduct = () => {
                     </div>
                 </div>
                 <input type="submit" value="Add Product" className="btn btn-block bg-gray-700 text-white normal-case hover:text-black" />
-
+                <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+                />
             </form>
         </div>
     );
