@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaUtensils } from "react-icons/fa";
 
 
@@ -22,8 +22,11 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
+                
                 <FaUtensils></FaUtensils>
-                <a className="btn btn-ghost normal-case text-xl">Tasty Hub</a>
+                <Link to={'/'}>
+                    <a className="btn btn-ghost normal-case text-xl">Tasty Hub</a>
+                </Link>
             </div>
             <div className="navbar-end  hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
