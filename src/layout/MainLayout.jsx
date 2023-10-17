@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Navbar/Footer/Footer";
+import Footer from "../components/Footer/Footer";
 
 const MainLayout = () => {
     return (
         <div>
             <div className="w-[1400px] mx-auto">
                 <Navbar></Navbar>
-                <div className=" my-10">
+                <div className=" mb-10">
                     <Outlet></Outlet>
                 </div>
             </div>
