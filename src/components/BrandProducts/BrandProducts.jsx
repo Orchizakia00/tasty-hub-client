@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const BrandProducts = () => {
 
@@ -30,6 +30,7 @@ const BrandProducts = () => {
     const goToPreviousSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + products.length) % products.length);
     };
+
 
     return (
         <div>
@@ -63,9 +64,17 @@ const BrandProducts = () => {
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{product.productName}</h2>
-                            <p>{product.shortDescription}</p>
+                            <p> <span className="font-bold">Brand Name:</span> {product.brandName}</p>
+                            <p> <span className="font-bold">Category:</span> {product.category}</p>
+                            <p> <span className="font-bold">Price:</span> ${product.price}</p>
+                            <p> <span className="font-bold">Rating:</span> {product.rating}</p>
+
+
                             <div className="card-actions">
-                                <button className="btn btn-error normal-case text-white">Add to Cart</button>
+                                <button className="btn btn-error normal-case text-white">Details</button>
+                                <Link to={`/updateProduct/${product._id}`}>
+                                    <button className="btn btn-warning normal-case text-white">Update</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
