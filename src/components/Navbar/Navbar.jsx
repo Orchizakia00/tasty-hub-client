@@ -20,10 +20,10 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-        <NavLink to={'/'}> <li><a>Home</a></li> </NavLink>
-        <NavLink to={'/add'}> <li><a>Add Product</a></li> </NavLink>
-        <NavLink to={'/cart'}> <li><a>Cart</a></li> </NavLink>
-        {/* <NavLink to={'/login'}> <li><a>Login</a></li> </NavLink> */}
+        <NavLink to={'/'}> <li><a className="font-semibold">Home</a></li> </NavLink>
+        <NavLink to={'/add'}> <li><a className="font-semibold">Add Product</a></li> </NavLink>
+        <NavLink to={'/cart'}> <li><a className="font-semibold">Cart</a></li> </NavLink>
+        <NavLink to={'/users'}> <li><a className="font-semibold">Users</a></li> </NavLink>
     </>
 
     return (
@@ -40,15 +40,25 @@ const Navbar = () => {
 
                 <FaUtensils></FaUtensils>
                 <Link to={'/'}>
-                    <a className="btn btn-ghost normal-case text-xl">Tasty Hub</a>
+                    <a className="btn btn-ghost normal-case text-2xl">Tasty Hub</a>
                 </Link>
             </div>
-            <div className="navbar-end  hidden lg:flex">
+            <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navLinks}
                 </ul>
+
+            </div>
+            <div className="navbar-end">
                 {
                     user ? <>
+                        <span className="mr-2">{user.displayName}</span>
+                        <label tabIndex={0} className="avatar mr-2">
+                            <div className="w-10 rounded-full">
+                                <img src={user.photoURL} alt={user.photoURL} className="" />
+                            </div>
+                        </label>
+
                         <button onClick={handleLogout} className="btn btn-ghost normal-case">Log Out</button>
                     </>
 

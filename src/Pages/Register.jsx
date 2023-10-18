@@ -11,9 +11,10 @@ const Register = () => {
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
+        const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, email, password);
+        console.log(name, photo, email, password);
 
         if (password.length < 6) {
             toast.error('Password should be at least 6 characters or longer!');
@@ -27,7 +28,7 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                handleUpdate()
+                handleUpdate(name, photo)
                     .then(() => {
                         toast.success('User created Successfully!!');
 
@@ -67,6 +68,12 @@ const Register = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" placeholder="name" name="name" className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo</span>
+                            </label>
+                            <input type="text" placeholder="photo url" name="photo" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
