@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaUtensils } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const Navbar = () => {
@@ -11,7 +12,10 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                toast.success('Logged Out Successfully!')
+            })
             .catch(err => console.log(err))
     }
 
@@ -45,13 +49,17 @@ const Navbar = () => {
                 </ul>
                 {
                     user ? <>
-                        <button onClick={handleLogout} className="btn normal-case">Log Out</button>
+                        <button onClick={handleLogout} className="btn btn-ghost normal-case">Log Out</button>
                     </>
 
                         :
-                        <Link to={'/login'}><button className="btn normal-case">Login</button></Link>
+                        <Link to={'/login'}><button className="btn btn-ghost normal-case">Login</button></Link>
                 }
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     );
 };

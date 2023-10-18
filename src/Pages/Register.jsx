@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Register = () => {
@@ -74,6 +74,10 @@ const Register = () => {
                     <p className="mx-auto mb-4">Already have an account? Please <Link to={'/login'}><span className="font-extrabold">Login</span></Link></p>
                 </div>
             </div>
+            <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+                />
         </div>
     );
 };

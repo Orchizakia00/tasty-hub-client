@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const Login = () => {
@@ -69,10 +69,14 @@ const Login = () => {
                     <p className="mx-auto mb-4">Do not have an account? Please <Link to={'/register'}><span className="font-extrabold">Register</span></Link></p>
                     <p className="text-center">
                         <button onClick={handleGoogleSignIn} className="btn btn-ghost normal-case mb-6">
-                        <FcGoogle />
-                        Log in with Google</button></p>
+                            <FcGoogle />
+                            Log in with Google</button></p>
                 </div>
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     );
 };
