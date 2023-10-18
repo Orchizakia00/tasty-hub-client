@@ -1,14 +1,25 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaUtensils } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user);
+
+    const handleLogout = () => {
+        logOut()
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
 
     const navLinks = <>
         <NavLink to={'/'}> <li><a>Home</a></li> </NavLink>
         <NavLink to={'/add'}> <li><a>Add Product</a></li> </NavLink>
         <NavLink to={'/cart'}> <li><a>Cart</a></li> </NavLink>
-        <NavLink to={'/login'}> <li><a>Login</a></li> </NavLink>
+        {/* <NavLink to={'/login'}> <li><a>Login</a></li> </NavLink> */}
     </>
 
     return (
@@ -22,7 +33,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                
+
                 <FaUtensils></FaUtensils>
                 <Link to={'/'}>
                     <a className="btn btn-ghost normal-case text-xl">Tasty Hub</a>
@@ -32,6 +43,14 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     {navLinks}
                 </ul>
+                {
+                    user ? <>
+                        <button onClick={handleLogout} className="btn normal-case">Log Out</button>
+                    </>
+
+                        :
+                        <Link to={'/login'}><button className="btn normal-case">Login</button></Link>
+                }
             </div>
         </div>
     );
