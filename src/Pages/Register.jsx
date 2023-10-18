@@ -34,6 +34,20 @@ const Register = () => {
                         navigate('/');
                     })
                 console.log(result.user);
+
+                const createdAt = result.user?.metadata?.creationTime;
+                const user = { name, email, createdAt: createdAt };
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
             })
             .catch(error => {
                 console.error(error);
@@ -75,9 +89,9 @@ const Register = () => {
                 </div>
             </div>
             <Toaster
-                    position="top-center"
-                    reverseOrder={false}
-                />
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     );
 };
