@@ -1,35 +1,26 @@
-import { useState } from "react";
+
 import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
 
-    const [cart, setCart] = useState([]);
     const product = useLoaderData();
 
-    const { _id, productName, shortDescription, productImg, price } = product;
+    const { productName, shortDescription, productImg, price, rating } = product;
 
     const handleAddCart = () => {
 
-        const newItem = {
-            _id,
-            productName,
-            shortDescription,
-            price,
-            productImg
-          };
-      
-          // Check if the item is already in the cart
-          const existingItem = cart.find(item => item._id === newItem._id);
-          if (existingItem) {
-            toast.error('Product is already in the cart!');
-          } else {
-            // Add the item to the cart
-            setCart([...cart, newItem]);
-            toast.success('Product successfully added to the cart!');
-          }
+        const cartItem = { productName, productImg, price, rating };
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(cartItem)
+        })
 
-        // toast.success('Product successfully added to the cart!')
+
+        toast.success('Product successfully added to the cart!')
     }
 
     return (
