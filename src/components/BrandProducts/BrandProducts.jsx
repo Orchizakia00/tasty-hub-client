@@ -67,11 +67,14 @@ const BrandProducts = () => {
                             <p> <span className="font-bold">Brand Name:</span> {product.brandName}</p>
                             <p> <span className="font-bold">Category:</span> {product.category}</p>
                             <p> <span className="font-bold">Price:</span> ${product.price}</p>
-                            <p> <span className="font-bold">Rating:</span> {product.rating}</p>
+                            <p> <span className="font-bold">Rating:</span> {product.rating} / 5</p>
 
 
                             <div className="card-actions">
-                                <button className="btn btn-error normal-case text-white">Details</button>
+
+                                <Link to={`/productDetails/${product._id}`}>
+                                    <button className="btn btn-error normal-case text-white">Details</button>
+                                </Link>
                                 <Link to={`/updateProduct/${product._id}`}>
                                     <button className="btn btn-warning normal-case text-white">Update</button>
                                 </Link>

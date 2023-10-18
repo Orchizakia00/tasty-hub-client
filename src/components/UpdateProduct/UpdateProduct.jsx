@@ -5,7 +5,7 @@ const UpdateProduct = () => {
 
     const product = useLoaderData();
 
-    const { _id, productName, brandName, shortDescription, price, category, rating, productImg, brandImg } = product;
+    const { _id, productName, brandName, shortDescription, price, rating, productImg, brandImg } = product;
 
     const handleUpdate = e => {
         e.preventDefault();
