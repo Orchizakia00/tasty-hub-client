@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import AddProduct from "../Pages/AddProduct";
 import Cart from "../Pages/Cart";
 import Login from "../Pages/Login";
+import BrandProducts from "../components/BrandProducts/BrandProducts";
 
 
   const router = createBrowserRouter([
@@ -31,6 +32,11 @@ import Login from "../Pages/Login";
         {
             path:'/login',
             element: <Login></Login>
+        },
+        {
+            path:'/brandProducts/:brandName',
+            element: <BrandProducts></BrandProducts>,
+            loader: () => fetch('http://localhost:5000/product')
         }
       ]
     },
