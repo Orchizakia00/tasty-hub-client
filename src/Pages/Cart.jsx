@@ -1,8 +1,19 @@
+/* eslint-disable react/prop-types */
 
-const Cart = () => {
+const Cart = ({ cart }) => {
+
+    console.log(cart);
+
     return (
         <div>
-            this is cart
+            <h2>Cart</h2>
+            { (
+                <ul>
+                    {cart.map(item => (
+                        <li key={item._id}>{item.productName}</li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 };
