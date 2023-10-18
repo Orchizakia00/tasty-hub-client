@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Brand = ({ brand }) => {
     return (
         <Link to={`/brandProducts/${brand.brandName}`}>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100 shadow-xl h-[60vh]">
                 <figure className="px-10 pt-10">
                     <img src={brand.brandImg} alt={brand.brandName} className="rounded-xl" />
                 </figure>
