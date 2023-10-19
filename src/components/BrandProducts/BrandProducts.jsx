@@ -1,8 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import slider_bg from '../../assets/bgslider.jpg'
-import banner from '../../assets/banner.jpg'
 
 const BrandProducts = () => {
 
@@ -12,16 +10,6 @@ const BrandProducts = () => {
     console.log(productName, brandName);
 
     useEffect(() => {
-        // if (!productName) {
-        //     // No product name provided, display message
-        //     return (
-        //         <div className="min-h-screen text-center">
-        //             <p>No available products</p>
-        //         </div>
-        //     );
-        // }
-
-
         if (brandName) {
             fetch(`http://localhost:5000/product?brand=${brandName}`)
                 .then(res => res.json())
@@ -71,7 +59,7 @@ const BrandProducts = () => {
 
             {/* products */}
             <h2 className='text-4xl font-bold text-center mt-20 mb-10'>Featured Products</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {products.map(product => (
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">

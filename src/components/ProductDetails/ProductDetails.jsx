@@ -26,7 +26,7 @@ const ProductDetails = () => {
     return (
         <div className="min-h-screen my-auto">
             <h2 className='text-4xl font-bold text-center mt-10 mb-20'>{productName} Details</h2>
-            <div className="card lg:card-side bg-base-100 shadow-xl">
+            <div className="card lg:card-side bg-base-100 shadow-xl w-3/4 mx-auto">
                 <figure><img src={productImg} alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title font-semibold">{productName}</h2>
