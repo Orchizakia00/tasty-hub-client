@@ -7,7 +7,7 @@ const Users = () => {
     return (
         <div className="min-h-screen">
             <h2 className='text-4xl font-bold text-center my-10'>All Users</h2>
-            <div className="overflow-x-auto lg:ml-28">
+            <div className="overflow-x-auto w-11/12 mx-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
