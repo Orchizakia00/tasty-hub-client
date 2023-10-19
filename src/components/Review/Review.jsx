@@ -2,7 +2,7 @@
 
 const Review = () => {
     return (
-        <div className='my-10'>
+        <div className='mb-16 mt-20'>
             <h2 className='text-4xl font-bold text-center my-10'>Customer's Review</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 <div className="card card-side bg-base-100 shadow-xl">
