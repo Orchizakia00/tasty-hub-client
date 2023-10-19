@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import slider_bg from '../../assets/bgslider.jpg'
+import banner from '../../assets/banner.jpg'
 
 const BrandProducts = () => {
 
@@ -48,14 +50,14 @@ const BrandProducts = () => {
 
             {/* Slider */}
             {products.length > 0 && (
-                <div className="carousel w-full h-[800px] relative">
+                <div className="carousel w-full h-[400px] relative mt-20" >
                     {products.map((product, index) => (
                         <div
                             key={product._id}
                             className={`carousel-item absolute w-full ${index === currentSlide ? "block" : "hidden"
                                 }`}
                         >
-                            <img src={product.productImg} className="w-full" alt={product.productName} />
+                            <img src={product.productImg} className="flex justify-center mx-auto h-[360px]" alt={product.productName} />
                         </div>
                     ))}
 
@@ -68,12 +70,12 @@ const BrandProducts = () => {
 
 
             {/* products */}
-            <h2 className='text-4xl font-bold text-center my-10'>Featured Products</h2>
+            <h2 className='text-4xl font-bold text-center mt-20 mb-10'>Featured Products</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {products.map(product => (
                     <div className="card w-96 bg-base-100 shadow-xl">
                         <figure className="px-10 pt-10">
-                            <img src={product.productImg} alt={product.productName} className="rounded-xl" />
+                            <img src={product.productImg} alt={product.productName} className="rounded-xl h-[200px]" />
                         </figure>
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{product.productName}</h2>
