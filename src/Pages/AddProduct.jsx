@@ -6,13 +6,13 @@ const AddProduct = () => {
         e.preventDefault();
 
         const form = e.target;
-        const productName = form.product_name.value;
+        const productName = form.product_name.value || "No products available";
         const brandName = form.brand_name.value;
-        const shortDescription = form.short_description.value;
-        const price = form.price.value;
-        const category = form.category.value;
-        const rating = form.rating.value;
-        const productImg = form.product_image.value;
+        const shortDescription = form.short_description.value || "No description available";
+        const price = form.price.value || 0;
+        const category = form.category.value || "Other";
+        const rating = form.rating.value || 0;
+        const productImg = form.product_image.value || "default-product-image-url"; // Provide a default image URL
         const brandImg = form.brand_image.value;
 
         const newProduct = { productName, brandName, shortDescription, price, category, rating, productImg, brandImg }

@@ -4,24 +4,34 @@ import { Link, useParams } from "react-router-dom";
 
 const BrandProducts = () => {
 
-    const { brandName } = useParams();
+    const { brandName, productName } = useParams();
     const [products, setProducts] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
-    // console.log(products);
+    console.log(productName, brandName);
 
     useEffect(() => {
+        // if (!productName) {
+        //     // No product name provided, display message
+        //     return (
+        //         <div className="min-h-screen text-center">
+        //             <p>No available products</p>
+        //         </div>
+        //     );
+        // }
+
+
         if (brandName) {
             fetch(`http://localhost:5000/product?brand=${brandName}`)
-                .then(response => response.json())
+                .then(res => res.json())
                 .then(data => {
                     const filteredProducts = data.filter(product => product.brandName === brandName);
                     setProducts(filteredProducts);
                 })
                 .catch(error => {
-                    console.error("Error fetching products:", error);
+                    console.error(error);
                 });
         }
-    }, [brandName]);
+    }, [brandName, productName]);
 
     const goToNextSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % products.length);
@@ -36,6 +46,7 @@ const BrandProducts = () => {
         <div>
             <h2 className='text-4xl font-bold text-center my-10'>{brandName} Products</h2>
 
+            {/* Slider */}
             {products.length > 0 && (
                 <div className="carousel w-full h-[800px] relative">
                     {products.map((product, index) => (
@@ -55,7 +66,9 @@ const BrandProducts = () => {
                 </div>
             )}
 
-            <h2 className='text-4xl font-bold text-center my-10'>Order Now</h2>
+
+            {/* products */}
+            <h2 className='text-4xl font-bold text-center my-10'>Featured Products</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {products.map(product => (
                     <div className="card w-96 bg-base-100 shadow-xl">
