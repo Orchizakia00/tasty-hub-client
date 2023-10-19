@@ -5,7 +5,7 @@ const Users = () => {
     const loadedUsers = useLoaderData();
 
     return (
-        <div>
+        <div className="min-h-screen">
             <h2 className='text-4xl font-bold text-center my-10'>All Users</h2>
             <div className="overflow-x-auto lg:ml-28">
                 <table className="table">

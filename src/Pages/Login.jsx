@@ -31,9 +31,34 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-                console.log(result.user);
-                navigate('/');
-                toast.success('Logged In Successfully!');
+                const createdAt = result.user?.metadata?.creationTime;
+                // const user = { name, email, createdAt: createdAt, photo };
+                const { displayName, email, photoURL } = result.user; // Extract user data from Google sign-in response
+                console.log(displayName, email, photoURL);
+
+                // Send user data to the server
+                fetch("http://localhost:5000/user", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: displayName,
+                        email: email,
+                        photo: photoURL,
+                        createdAt: createdAt,
+                    }),
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        navigate("/");
+                        toast.success("Logged In Successfully!");
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                        toast.error("Failed to log in with Google!");
+                    });
             })
             .catch(error => {
                 console.error(error);
