@@ -38,7 +38,7 @@ const Register = () => {
 
                 const createdAt = result.user?.metadata?.creationTime;
                 const user = { name, email, createdAt: createdAt, photo };
-                fetch('http://localhost:5000/user', {
+                fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

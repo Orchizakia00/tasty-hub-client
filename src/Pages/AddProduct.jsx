@@ -18,7 +18,7 @@ const AddProduct = () => {
         const newProduct = { productName, brandName, shortDescription, price, category, rating, productImg, brandImg }
         console.log(newProduct);
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

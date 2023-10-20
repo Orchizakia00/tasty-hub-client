@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -32,7 +31,7 @@ const Cart = () => {
         })
             .then(result => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/cart/${id}`, {
+                    fetch(`https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/cart/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

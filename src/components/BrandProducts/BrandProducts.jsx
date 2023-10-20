@@ -11,7 +11,7 @@ const BrandProducts = () => {
 
     useEffect(() => {
         if (brandName) {
-            fetch(`http://localhost:5000/product?brand=${brandName}`)
+            fetch(`https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product?brand=${brandName}`)
                 .then(res => res.json())
                 .then(data => {
                     const filteredProducts = data.filter(product => product.brandName === brandName);
