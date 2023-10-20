@@ -7,25 +7,21 @@ const BrandProducts = () => {
     const { brandName, productName } = useParams();
     const [products, setProducts] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
-    console.log(productName, brandName);
 
     useEffect(() => {
-
-        // if (productName == null) {
-        //     // No product name provided, display message
-        //     return (
-        //         <div className="min-h-screen text-center">
-        //             <p>No available products</p>
-        //         </div>
-        //     );
-        // }
 
         if (brandName) {
             fetch(`https://tasty-hub-server.vercel.app/product?brand=${brandName}`)
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data);
+                    // const filteredProducts = productName ? data.filter(product => product.brandName === brandName) : [];
                     const filteredProducts = data.filter(product => product.brandName === brandName);
+                    console.log(filteredProducts);
                     setProducts(filteredProducts);
+
+
+
                 })
                 .catch(error => {
                     console.error(error);
@@ -40,6 +36,16 @@ const BrandProducts = () => {
     const goToPreviousSlide = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + products.length) % products.length);
     };
+
+    console.log(products);
+    if (brandName == "In and Out") {
+        // No product name provided, display message
+        return (
+            <div className="min-h-screen text-center flex items-center justify-center">
+                <p className="text-3xl">No available products for this brand</p>
+            </div>
+        );
+    }
 
 
     return (
