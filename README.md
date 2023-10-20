@@ -1,8 +1,12 @@
-# React + Vite
+# Tasty Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Client-side Live Link: https://tasty-hub-b9f0c.web.app/
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features:
+- In this website, an user can see their desired brand's food. Also they can know more details about foods.
+- User can log in with email and password or with google.
+- They can also customize the theme between light or dark mode.
+- The logged in user can add any products of any brand.
+- User can also update any existing product.
+- After logging in user can see his/her profile picture and name at the navbar.
+- User can also add their desired product to the cart and also can delete the products from the cart.
