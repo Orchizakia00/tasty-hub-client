@@ -31,7 +31,7 @@ const Cart = () => {
         })
             .then(result => {
                 if (result.isConfirmed) {
-                    fetch(`https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/cart/${id}`, {
+                    fetch(`https://tasty-hub-server.vercel.app/cart/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -44,7 +44,7 @@ const Cart = () => {
                                 console.log('deleted successfully');
                                 Swal.fire(
                                     'Deleted!',
-                                    'Your Coffee has been deleted.',
+                                    'Your product has been deleted.',
                                     'success'
                                 )
 
@@ -61,7 +61,7 @@ const Cart = () => {
             <h2 className='text-4xl font-bold text-center mt-10 mb-20'>Cart</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto">
                 {
-                    loadedItems.map(item => (
+                    items.map(item => (
                         <div key={item._id} className="card card-compact w-96 bg-base-100 shadow-xl">
                             <figure><img className="w-[200px] h-[200px]" src={item.productImg} alt={item.productName} /></figure>
                             <div className="card-body">

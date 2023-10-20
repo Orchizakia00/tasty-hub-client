@@ -37,7 +37,7 @@ const Login = () => {
                 console.log(displayName, email, photoURL);
 
                 // Send user data to the server
-                fetch("https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/user", {
+                fetch("https://tasty-hub-server.vercel.app/user", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -10,8 +10,18 @@ const BrandProducts = () => {
     console.log(productName, brandName);
 
     useEffect(() => {
+
+        // if (productName == null) {
+        //     // No product name provided, display message
+        //     return (
+        //         <div className="min-h-screen text-center">
+        //             <p>No available products</p>
+        //         </div>
+        //     );
+        // }
+
         if (brandName) {
-            fetch(`https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product?brand=${brandName}`)
+            fetch(`https://tasty-hub-server.vercel.app/product?brand=${brandName}`)
                 .then(res => res.json())
                 .then(data => {
                     const filteredProducts = data.filter(product => product.brandName === brandName);

@@ -6,7 +6,7 @@ const AddProduct = () => {
         e.preventDefault();
 
         const form = e.target;
-        const productName = form.product_name.value || "No products available";
+        const productName = form.product_name.value || null;
         const brandName = form.brand_name.value;
         const shortDescription = form.short_description.value || "No description available";
         const price = form.price.value || 0;
@@ -18,7 +18,7 @@ const AddProduct = () => {
         const newProduct = { productName, brandName, shortDescription, price, category, rating, productImg, brandImg }
         console.log(newProduct);
 
-        fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product', {
+        fetch('https://tasty-hub-server.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

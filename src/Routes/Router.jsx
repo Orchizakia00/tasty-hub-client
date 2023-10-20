@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product')
+                loader: () => fetch('https://tasty-hub-server.vercel.app/product')
             },
             {
                 path: '/add',
@@ -33,12 +33,12 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-                loader: () => fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/cart')
+                loader: () => fetch('https://tasty-hub-server.vercel.app/cart')
             },
             {
                 path: '/users',
                 element: <PrivateRoute><Users></Users></PrivateRoute>,
-                loader: () => fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/user')
+                loader: () => fetch('https://tasty-hub-server.vercel.app/user')
             },
             {
                 path: '/login',
@@ -51,17 +51,17 @@ const router = createBrowserRouter([
             {
                 path: '/brandProducts/:brandName',
                 element: <BrandProducts></BrandProducts>,
-                loader: () => fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product')
+                loader: () => fetch('https://tasty-hub-server.vercel.app/product')
             },
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product/${params.id}`)
+                loader: ({ params }) => fetch(`https://tasty-hub-server.vercel.app/product/${params.id}`)
             },
             {
                 path: '/productDetails/:id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/product/${params.id}`)
+                loader: ({ params }) => fetch(`https://tasty-hub-server.vercel.app/product/${params.id}`)
             },
         ]
     },

@@ -11,7 +11,7 @@ const ProductDetails = () => {
     const handleAddCart = () => {
 
         const cartItem = { productName, productImg, price, rating };
-        fetch('https://tasty-hub-server-80re6nwbh-orchis-projects-3691b97f.vercel.app/cart', {
+        fetch('https://tasty-hub-server.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
