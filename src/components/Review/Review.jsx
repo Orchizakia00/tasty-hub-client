@@ -2,10 +2,10 @@
 
 const Review = () => {
     return (
-        <div className='mb-16 mt-20'>
+        <div className='mb-16 mt-20 mx-auto lg:w-[1400px]'>
             <h2 className='text-4xl font-bold text-center my-10'>Customer's Review</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                <div className="card card-side bg-base-100 shadow-xl">
+                <div className="card card-side bg-base-100 shadow-xl w-96">
                     <figure><img src="https://i.ibb.co/y5ZcZM9/mcdonalds-hamburger-happy-meal-pineapple-1-3-product-tile-desktop-wid-829-hei-515-dpr-off.jpg" className='h-72 w-40' alt="Movie" /></figure>
                     <div className="card-body w-10">
                         <h2 className="card-title">McDonald's Happy Meal</h2>
@@ -15,7 +15,7 @@ const Review = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-side bg-base-100 shadow-xl">
+                <div className="card card-side bg-base-100 shadow-xl w-96">
                     <figure><img src="https://www.nicepng.com/png/detail/852-8527806_buffalo-chicken-pepperoni-pizza-pizza-hut-slice.png" className='h-72 w-44' alt="Movie" /></figure>
                     <div className="card-body w-10">
                         <h2 className="card-title">Buffalo Chicken Pizza!</h2>
@@ -25,7 +25,7 @@ const Review = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-side bg-base-100 shadow-xl">
+                <div className="card card-side bg-base-100 shadow-xl w-96">
                     <figure><img src="https://i.ibb.co/W396LPN/cad1f79df6de47c3071bc97052bc1802.jpg" className='h-72 w-40' alt="Movie" /></figure>
                     <div className="card-body w-10">
                         <h2 className="card-title">Starbucks Caramel Macchiato</h2>

@@ -3,7 +3,7 @@ const Book = () => {
     return (
         <div className="mt-20">
             <h2 className='text-4xl font-bold text-center my-10'>Booking Service</h2>
-            <div className="hero bg-base-200 h-[60vh]">
+            <div className="hero bg-base-200 h-[60vh] pb-20 lg:w-[1400px] mx-auto">
                 <div className="hero-content text-center">
                     <div className="max-w-xl">
                         <h1 className="text-3xl font-semibold">Book us for your events</h1>
