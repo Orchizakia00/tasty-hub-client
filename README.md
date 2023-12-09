@@ -33,7 +33,7 @@ VITE_APPID=value of appId from your firebase configuration <br/>
     npm run dev
 
 ### Server Side
-1. Clone the server from: https://github.com/Orchizakia00/reso-nest-server
+1. Clone the server from: https://github.com/Orchizakia00/tasty-hub-server
 2. Create a .env file.
 3. In this file, you have to add the followings: <br/>
 DB_USER=replace with your username <br/>
