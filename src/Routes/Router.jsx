@@ -13,6 +13,7 @@ import ProductDetails from "../components/ProductDetails/ProductDetails";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import Users from "../Pages/Users";
+import Contact from "../Pages/Contact";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
                 path: '/users',
                 element: <PrivateRoute><Users></Users></PrivateRoute>,
                 loader: () => fetch('https://tasty-hub-server.vercel.app/user')
+            },
+            {
+                path:'/contact',
+                element: <Contact></Contact>
             },
             {
                 path: '/login',

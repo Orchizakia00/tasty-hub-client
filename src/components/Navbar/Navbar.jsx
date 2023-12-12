@@ -24,6 +24,7 @@ const Navbar = () => {
         <NavLink to={'/add'}> <li><a className="font-semibold">Add Product</a></li> </NavLink>
         <NavLink to={'/cart'}> <li><a className="font-semibold">Cart</a></li> </NavLink>
         <NavLink to={'/users'}> <li><a className="font-semibold">Users</a></li> </NavLink>
+        <NavLink to={'/contact'}> <li><a className="font-semibold">Contact</a></li> </NavLink>
     </>
 
     // for dark mode
