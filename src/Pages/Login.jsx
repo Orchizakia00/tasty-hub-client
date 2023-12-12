@@ -3,6 +3,8 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../Providers/AuthProvider";
+import Lottie from "lottie-react";
+import animation from "../assets/animations/login-Animation - 1702382516663.json"
 
 const Login = () => {
 
@@ -66,36 +68,41 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-100">
             <div className="">
                 <h1 className="text-5xl font-bold text-center mb-14">Login now!</h1>
-                <div className="card w-96 shadow-2xl bg-base-100">
-                    <form onSubmit={handleLogin} className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email" placeholder="email" name="email" className="input input-bordered" required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" placeholder="password" name="password" className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-neutral">Login</button>
-                        </div>
-                    </form>
-                    <p className="mb-6 text-center"> {error} </p>
-                    <p className="mx-auto mb-4">Do not have an account? Please <Link to={'/register'}><span className="font-extrabold">Register</span></Link></p>
-                    <p className="text-center">
-                        <button onClick={handleGoogleSignIn} className="btn btn-ghost normal-case mb-6">
-                            <FcGoogle />
-                            Log in with Google</button></p>
+                <div className="flex flex-col lg:flex-row gap-16">
+                    <div>
+                    <Lottie loop={true} animationData={animation}></Lottie>
+                    </div>
+                    <div className="card w-96 shadow-2xl bg-base-100 h-fit mt-6">
+                        <form onSubmit={handleLogin} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type="password" placeholder="password" name="password" className="input input-bordered" required />
+                                <label className="label">
+                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                </label>
+                            </div>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-neutral">Login</button>
+                            </div>
+                        </form>
+                        <p className="mb-6 text-center"> {error} </p>
+                        <p className="mx-auto mb-4">Do not have an account? Please <Link to={'/register'}><span className="font-extrabold">Register</span></Link></p>
+                        <p className="text-center">
+                            <button onClick={handleGoogleSignIn} className="btn btn-ghost normal-case mb-6">
+                                <FcGoogle />
+                                Log in with Google</button></p>
+                    </div>
                 </div>
             </div>
             <Toaster
