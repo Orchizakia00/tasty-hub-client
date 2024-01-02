@@ -23,6 +23,9 @@ const Navbar = () => {
         <NavLink to={'/'}> <li><a className="font-semibold">Home</a></li> </NavLink>
         <NavLink to={'/dashboard/cart'}> <li><a className="font-semibold">Cart</a></li> </NavLink>
         <NavLink to={'/contact'}> <li><a className="font-semibold">Contact</a></li> </NavLink>
+        {
+            !user && <NavLink to={'/login'}> <li><a className="font-semibold">Login</a></li> </NavLink>
+        }
     </>
 
     // for dark mode
@@ -73,19 +76,35 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user ? <>
-                        <span className="mr-2">{user.displayName}</span>
+                    user && <>
+                        {/* <span className="mr-2">{user.displayName}</span>
                         <label tabIndex={0} className="avatar mr-2">
                             <div className="w-10 rounded-full">
                                 <img src={user.photoURL} alt={user.photoURL} className="" />
                             </div>
                         </label>
 
-                        <button onClick={handleLogout} className="btn btn-ghost normal-case">Log Out</button>
+                        <button onClick={handleLogout} className="btn btn-ghost normal-case">Log Out</button> */}
+                        <div className="dropdown dropdown-end mr-3">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+                                </div>
+                            </div>
+                            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                <li className="mb-2">
+                                    <a className="justify-between">
+                                        {user.displayName}
+                                    </a>
+                                    <a className="justify-between">
+                                        {user.email}
+                                    </a>
+                                </li>
+                                <hr />
+                                <li onClick={handleLogout}><a>Logout</a></li>
+                            </ul>
+                        </div>
                     </>
-
-                        :
-                        <Link to={'/login'}><button className="btn btn-ghost normal-case">Login</button></Link>
                 }
                 <label className="swap swap-rotate">
 
