@@ -35,12 +35,12 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="bg-base-200 p-20">
+        <div className="bg-base-100 px-5 lg:px-20 py-5">
             <h2 className="text-4xl font-bold text-center mb-8">Add New Product</h2>
             <form onSubmit={handleAdd}>
 
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
+                <div className="flex-col flex lg:flex-row mb-8">
+                    <div className="form-control lg:w-1/2">
                         <label className="label">
                             <span className="label-text">Product Name</span>
                         </label>
@@ -48,7 +48,7 @@ const AddProduct = () => {
                             <input type="text" name="product_name" placeholder="Product Name" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control lg:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Brand Name</span>
                         </label>
@@ -58,8 +58,8 @@ const AddProduct = () => {
                     </div>
                 </div>
 
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
+                <div className="flex-col flex lg:flex-row mb-8">
+                    <div className="form-control lg:w-1/2">
                         <label className="label">
                             <span className="label-text">Short Description</span>
                         </label>
@@ -67,7 +67,7 @@ const AddProduct = () => {
                             <input type="text" name="short_description" placeholder="Short Description" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control lg:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -77,8 +77,8 @@ const AddProduct = () => {
                     </div>
                 </div>
 
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
+                <div className="flex-col flex lg:flex-row  mb-8">
+                    <div className="form-control lg:w-1/2">
                         <label className="label">
                             <span className="label-text">Category</span>
                         </label>
@@ -92,7 +92,7 @@ const AddProduct = () => {
                             </select>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control lg:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
@@ -102,8 +102,8 @@ const AddProduct = () => {
                     </div>
                 </div>
 
-                <div className="md:flex mb-8">
-                    <div className="form-control md:w-1/2">
+                <div className="flex-col flex lg:flex-row  mb-8">
+                    <div className="form-control lg:w-1/2">
                         <label className="label">
                             <span className="label-text">Product Image</span>
                         </label>
@@ -111,7 +111,7 @@ const AddProduct = () => {
                             <input type="text" name="product_image" placeholder="Photo URL" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control lg:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Brand Image</span>
                         </label>
@@ -120,7 +120,7 @@ const AddProduct = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Product" className="btn btn-block bg-gray-700 text-white normal-case hover:text-black" />
+                <input type="submit" value="Add Product" className="btn btn-block bg-red-400 text-black normal-case hover:text-black hover:bg-red-200" />
                 <Toaster
                     position="top-center"
                     reverseOrder={false}

@@ -59,7 +59,7 @@ const Cart = () => {
     return (
         <div className="min-h-screen">
             <h2 className='text-4xl font-bold text-center mt-10 mb-20'>Cart</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5">
                 {
                     items.map(item => (
                         <div key={item._id} className="card card-compact w-96 bg-base-100 shadow-xl">

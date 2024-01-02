@@ -14,6 +14,7 @@ import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import Users from "../Pages/Users";
 import Contact from "../Pages/Contact";
+import Dashboard from "../layout/Dashboard";
 
 
 const router = createBrowserRouter([
@@ -26,20 +27,6 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('https://tasty-hub-server.vercel.app/product')
-            },
-            {
-                path: '/add',
-                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
-            },
-            {
-                path: '/cart',
-                element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-                loader: () => fetch('https://tasty-hub-server.vercel.app/cart')
-            },
-            {
-                path: '/users',
-                element: <PrivateRoute><Users></Users></PrivateRoute>,
-                loader: () => fetch('https://tasty-hub-server.vercel.app/user')
             },
             {
                 path:'/contact',
@@ -70,6 +57,28 @@ const router = createBrowserRouter([
             },
         ]
     },
+
+    {
+        path: "/dashboard",
+        element: <Dashboard />,
+        children: [
+            {
+                path: 'add',
+                element: <PrivateRoute><AddProduct/></PrivateRoute>
+            },
+            {
+                path: 'users',
+                element: <PrivateRoute><Users/></PrivateRoute>,
+                loader: () => fetch('https://tasty-hub-server.vercel.app/user')
+            },
+            {
+                path: 'cart',
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>,
+                loader: () => fetch('https://tasty-hub-server.vercel.app/cart')
+            },
+        ]
+    }
+
 ]);
 
 export default router;
