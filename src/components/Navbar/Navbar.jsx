@@ -23,18 +23,16 @@ const Navbar = () => {
         <NavLink to={'/'}> <li><a className="font-semibold">Home</a></li> </NavLink>
         <NavLink to={'/dashboard/cart'}> <li><a className="font-semibold">Cart</a></li> </NavLink>
         <NavLink to={'/contact'}> <li><a className="font-semibold">Contact</a></li> </NavLink>
+        <NavLink to={'/faq'}> <li><a className="font-semibold">FAQ</a></li> </NavLink>
         {
             !user && <NavLink to={'/login'}> <li><a className="font-semibold">Login</a></li> </NavLink>
         }
     </>
 
-    // for dark mode
-    // use theme from local storage if available or set light theme
     const [theme, setTheme] = useState(
         localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
     );
 
-    // update state on toggle
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme("dark");
@@ -43,11 +41,10 @@ const Navbar = () => {
         }
     };
 
-    // set theme state in localstorage on mount & also update localstorage on state change
     useEffect(() => {
         localStorage.setItem("theme", theme);
         const localTheme = localStorage.getItem("theme");
-        // add custom data-theme attribute to html tag required to update theme using DaisyUI
+
         document.querySelector("html").setAttribute("data-theme", localTheme);
     }, [theme]);
 
@@ -77,14 +74,6 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user && <>
-                        {/* <span className="mr-2">{user.displayName}</span>
-                        <label tabIndex={0} className="avatar mr-2">
-                            <div className="w-10 rounded-full">
-                                <img src={user.photoURL} alt={user.photoURL} className="" />
-                            </div>
-                        </label>
-
-                        <button onClick={handleLogout} className="btn btn-ghost normal-case">Log Out</button> */}
                         <div className="dropdown dropdown-end mr-3">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">

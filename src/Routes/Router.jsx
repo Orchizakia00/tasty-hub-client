@@ -15,6 +15,7 @@ import PrivateRoute from "./PrivateRoute";
 import Users from "../Pages/Users";
 import Contact from "../Pages/Contact";
 import Dashboard from "../layout/Dashboard";
+import Faq from "../Pages/Faq";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path:'/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path:'/faq',
+                element: <Faq/>
             },
             {
                 path: '/login',
