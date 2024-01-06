@@ -62,7 +62,7 @@ const Navbar = () => {
 
                 <FaUtensils></FaUtensils>
                 <Link to={'/'}>
-                    <a className="btn btn-ghost normal-case text-2xl">Tasty Hub</a>
+                    <a className="btn btn-ghost normal-case text-xl lg:text-xl">Tasty Hub</a>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">

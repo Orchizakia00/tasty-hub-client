@@ -5,9 +5,9 @@ const Users = () => {
     const loadedUsers = useLoaderData();
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen mb-10">
             <h2 className='text-4xl font-bold text-center my-10'>All Users</h2>
-            <div className="overflow-x-auto w-11/12 mx-auto">
+            <div className="overflow-x-auto lg:w-11/12 mx-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

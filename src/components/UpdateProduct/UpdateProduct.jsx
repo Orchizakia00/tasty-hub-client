@@ -40,7 +40,7 @@ const UpdateProduct = () => {
     }
 
     return (
-        <div className="bg-base-200 p-20">
+        <div className="bg-base-200 p-10 lg:p-20">
             <h2 className="text-4xl font-bold text-center mb-8">Update Product</h2>
             <form onSubmit={handleUpdate}>
 
@@ -53,7 +53,7 @@ const UpdateProduct = () => {
                             <input type="text" name="product_name" defaultValue={productName} placeholder="Product Name" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Brand Name</span>
                         </label>
@@ -72,7 +72,7 @@ const UpdateProduct = () => {
                             <input type="text" name="short_description" defaultValue={shortDescription} placeholder="Short Description" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -97,7 +97,7 @@ const UpdateProduct = () => {
                             </select>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
@@ -116,7 +116,7 @@ const UpdateProduct = () => {
                             <input type="text" name="product_image" defaultValue={productImg} placeholder="Photo URL" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Brand Image</span>
                         </label>
