@@ -17,10 +17,10 @@ const Home = () => {
             {/* <DarkMode></DarkMode> */}
             <Banner></Banner>
             <Brands products={products}></Brands>
+            <Review></Review>
             <Book></Book>
             <Offers></Offers>
             <Policy></Policy>
-            <Review></Review>
             <Community></Community>
         </div>
     );
