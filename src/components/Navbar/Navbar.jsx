@@ -1,11 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaUtensils } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 
-
 const Navbar = () => {
+    const location = useLocation();
+
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
 
     const { user, logOut } = useContext(AuthContext);
     console.log(user);
@@ -20,14 +24,26 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-        <NavLink to={'/'}> <li><a className="font-semibold">Home</a></li> </NavLink>
-        <NavLink to={'/products'}> <li><a className="font-semibold">All Products</a></li> </NavLink>
-        <NavLink to={'/dashboard/cart'}> <li><a className="font-semibold">Cart</a></li> </NavLink>
-        <NavLink to={'/contact'}> <li><a className="font-semibold">Contact</a></li> </NavLink>
-        <NavLink to={'/faq'}> <li><a className="font-semibold">FAQ</a></li> </NavLink>
-        {
-            !user && <NavLink to={'/login'}> <li><a className="font-semibold">Login</a></li> </NavLink>
-        }
+        <NavLink to={'/'}>
+            <li><a className={isActive('/') ? 'bg-base-200 rounded-md font-semibold' : 'font-semibold'}>Home</a></li>
+        </NavLink>
+        <NavLink to={'/products'} className={isActive('/products') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+            <li><a className="font-semibold">All Products</a></li>
+        </NavLink>
+        <NavLink to={'/dashboard/cart'} className={isActive('/dashboard/cart') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+            <li><a className="font-semibold">Cart</a></li>
+        </NavLink>
+        <NavLink to={'/contact'} className={isActive('/contact') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+            <li><a className="font-semibold">Contact</a></li>
+        </NavLink>
+        <NavLink to={'/faq'} className={isActive('/faq') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+            <li><a className="font-semibold">FAQ</a></li>
+        </NavLink>
+        {!user && (
+            <NavLink to={'/login'} className={isActive('/login') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+                <li><a className="font-semibold">Login</a></li>
+            </NavLink>
+        )}
     </>
 
     const [theme, setTheme] = useState(
