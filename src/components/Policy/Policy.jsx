@@ -13,7 +13,7 @@ const Policy = () => {
     };
 
     return (
-        <section className="bg-base-200 px-8 py-12 mt-10">
+        <section className="bg-base-200 px-8 py-12 mt-10 rounded-xl">
             <h2 className='text-4xl font-bold text-center mb-10'>Shipping and Returns</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-base p-6 rounded-md shadow-md">

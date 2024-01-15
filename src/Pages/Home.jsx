@@ -5,6 +5,7 @@ import Review from "../components/Review/Review";
 import Book from "../components/Book/Book";
 import Offers from "../components/Offers/Offers";
 import Policy from "../components/Policy/Policy";
+import Community from "../components/Community/Community";
 // import DarkMode from "../components/DarkMode/DarkMode";
 
 const Home = () => {
@@ -16,10 +17,11 @@ const Home = () => {
             {/* <DarkMode></DarkMode> */}
             <Banner></Banner>
             <Brands products={products}></Brands>
+            <Book></Book>
             <Offers></Offers>
             <Policy></Policy>
             <Review></Review>
-            <Book></Book>
+            <Community></Community>
         </div>
     );
 };
