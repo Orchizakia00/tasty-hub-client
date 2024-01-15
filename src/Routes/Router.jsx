@@ -16,6 +16,7 @@ import Users from "../Pages/Users";
 import Contact from "../Pages/Contact";
 import Dashboard from "../layout/Dashboard";
 import Faq from "../Pages/Faq";
+import AllProducts from "../Pages/AllProducts";
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/products',
+                element: <AllProducts />,
+                loader: () => fetch('https://tasty-hub-server.vercel.app/product')
             },
             {
                 path: '/brandProducts/:brandName',
