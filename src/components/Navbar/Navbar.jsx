@@ -25,22 +25,22 @@ const Navbar = () => {
 
     const navLinks = <>
         <NavLink to={'/'}>
-            <li><a className={isActive('/') ? 'bg-base-200 rounded-md font-semibold' : 'font-semibold'}>Home</a></li>
+            <li><a className={isActive('/') ? 'bg-base-300 rounded-md font-semibold' : 'font-semibold'}>Home</a></li>
         </NavLink>
-        <NavLink to={'/products'} className={isActive('/products') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+        <NavLink to={'/products'} className={isActive('/products') ? 'bg-base-300 rounded-md' : 'font-semibold'}>
             <li><a className="font-semibold">All Products</a></li>
         </NavLink>
-        <NavLink to={'/dashboard/cart'} className={isActive('/dashboard/cart') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+        <NavLink to={'/dashboard/cart'} className={isActive('/dashboard/cart') ? 'bg-base-300 rounded-md' : 'font-semibold'}>
             <li><a className="font-semibold">Cart</a></li>
         </NavLink>
-        <NavLink to={'/contact'} className={isActive('/contact') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+        <NavLink to={'/contact'} className={isActive('/contact') ? 'bg-base-300 rounded-md' : 'font-semibold'}>
             <li><a className="font-semibold">Contact</a></li>
         </NavLink>
-        <NavLink to={'/faq'} className={isActive('/faq') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+        <NavLink to={'/faq'} className={isActive('/faq') ? 'bg-base-300 rounded-md' : 'font-semibold'}>
             <li><a className="font-semibold">FAQ</a></li>
         </NavLink>
         {!user && (
-            <NavLink to={'/login'} className={isActive('/login') ? 'bg-base-200 rounded-md' : 'font-semibold'}>
+            <NavLink to={'/login'} className={isActive('/login') ? 'bg-base-300 rounded-md' : 'font-semibold'}>
                 <li><a className="font-semibold">Login</a></li>
             </NavLink>
         )}
